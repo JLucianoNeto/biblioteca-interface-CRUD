@@ -23,7 +23,6 @@ char resp;
 char str[60], c, resposta;
 //}
 
-
 int main(void)
 {
     inicializar_tela();
@@ -39,23 +38,24 @@ int main(void)
     double altura;
     char nome[50];
     
-    label(3, 2, "-Digite seu nome:");
+    label(3, 7, "-Digite seu nome:");
     
-    ler_string(3,20,50,nome);
+    ler_string(3,25,50,nome);
 
 
-    label(4, 2, "-Digite sua altura:");
-    altura = ler_decimal(4, 22, 10);
+    label(4, 7, "-Digite sua altura:");
+    altura = ler_decimal(4, 27, 10);
 
-    label(5, 2, "-Digite sua idade:");
-    idade = ler_inteiro(5, 21, 10);
+    label(5, 7, "-Digite sua idade:");
+    idade = ler_inteiro(5, 26, 10);
+    
 
-     gotoxy(3,30);
-     printf("Nome: %s ",nome);
-     gotoxy(4,30);
-     printf("Altura: %0.2f ",altura);
-     gotoxy(5,30);
-     printf("idade: %i ",idade);
+    gotoxy(3,36);
+    printf("Nome: %s",nome);
+    gotoxy(4,36);
+    printf("Altura: %0.2f",altura);
+    gotoxy(5,36);
+    printf("idade: %i",idade);
      
 
   
@@ -117,7 +117,12 @@ void janela(int x1, int y1, int x2, int y2, char *tipo_moldura, char titulo[])
         gotoxy(x2, i);
         printf(tipo_moldura);
     }
-
+    for(int k=1;k<x2;k++){
+        gotoxy(k, 1);
+        printf(tipo_moldura);
+        gotoxy(k, 80);
+        printf(tipo_moldura);
+    }
     {
         var_centr = centralizar_text(titulo);
         gotoxy(x1, (y2) / 2 - var_centr);
