@@ -69,7 +69,6 @@ int main(void)
     return 0;
 }
 
-
 void gotoxy(int x, int y)
 {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), (COORD){y - 1, x - 1});
@@ -93,7 +92,12 @@ int centralizar_text(char vector[])
         veri_vaz = vector[i];
         i++;
     } while (veri_vaz != NULL);
-    i = (int)floor((i - 1) / 2);
+    if(i%2 == 0){
+        i = (int)floor((i+1) / 2);
+    }else{
+        i = (int)ceil((i) / 2);
+    }
+    
     return i;
 }
 
