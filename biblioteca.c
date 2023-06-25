@@ -23,6 +23,7 @@ char resp;
 char str[60], c, resposta;
 //}
 
+
 int main(void)
 {
     inicializar_tela();
